@@ -23,12 +23,12 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 #import "JMTabBar.h"
 
 @interface JMTabBarController : UITabBarController
 
-- (instancetype)initWithTabBarControllers:(NSArray *)controllers NorImageArr:(NSArray *)norImageArr SelImageArr:(NSArray *)selImageArr TitleArr:(NSArray *)titleArr Config:(JMConfig *)config;
+- (instancetype)initWithTabBarControllers:(NSArray *)controllers NorImageArr:(NSArray *)norImageArr SelImageArr:(NSArray *)selImageArr TitleArr:(NSArray *)titleArr Config:(EHMainTabBarConfig *)config;
 
 /** tabBar */
 @property (nonatomic, strong) JMTabBar *JM_TabBar;

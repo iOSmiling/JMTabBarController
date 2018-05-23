@@ -38,7 +38,7 @@
     
         self.title = [[UILabel alloc] init];
         self.title.textAlignment = NSTextAlignmentCenter;
-        self.title.font = [UIFont systemFontOfSize:[[JMConfig config] titleFont]];
+        self.title.font = [UIFont systemFontOfSize:[[EHMainTabBarConfig config] titleFont]];
         [self addSubview:self.title];
         
         self.badgeValue = [[JMBadgeValue alloc] init];
@@ -50,9 +50,9 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGSize imageSize = [[JMConfig config] imageSize];
-    CGFloat imageY = [[JMConfig config] imageOffset];
-    if ([[JMConfig config] typeLayout] == JMConfigTypeLayoutImage) {
+    CGSize imageSize = [[EHMainTabBarConfig config] imageSize];
+    CGFloat imageY = [[EHMainTabBarConfig config] imageOffset];
+    if ([[EHMainTabBarConfig config] typeLayout] == JMConfigTypeLayoutImage) {
         imageY = self.height * 0.5 - imageSize.height * 0.5;
     }
     CGFloat iamgeX = self.width * 0.5 - imageSize.width * 0.5;
@@ -61,7 +61,7 @@
     CGFloat titleX = 4;
     CGFloat titleH = 14.f;
     CGFloat titleW = self.width - 8;
-    CGFloat titleY = self.height - titleH - [[JMConfig config] titleOffset];
+    CGFloat titleY = self.height - titleH - [[EHMainTabBarConfig config] titleOffset];
     self.title.frame = CGRectMake(titleX, titleY, titleW, titleH);
     
     CGFloat badgeX = CGRectGetMaxX(self.imageView.frame) - 6;
@@ -77,7 +77,7 @@
     if (typeLayout == JMConfigTypeLayoutImage) {
         self.title.hidden = YES;
         
-        CGSize imageSize = [[JMConfig config] imageSize];
+        CGSize imageSize = [[EHMainTabBarConfig config] imageSize];
         
         CGFloat imageX = self.width * 0.5 - imageSize.width * 0.5;
         CGFloat imageY = self.height * 0.5 - imageSize.height * 0.5;

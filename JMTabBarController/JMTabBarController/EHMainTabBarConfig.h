@@ -35,15 +35,18 @@
 
 #import <Foundation/Foundation.h>
 #import "UIColor+JM.h"
+
 @class JMTabBarController;
 
 /** 布局枚举 */
-typedef NS_ENUM(NSInteger, JMConfigTypeLayout) {
+typedef NS_ENUM(NSInteger, JMConfigTypeLayout)
+{
     JMConfigTypeLayoutNormal, //默认布局 图片在上 文字在下
     JMConfigTypeLayoutImage,  //只有图片 (图片居中)
 };
 
-typedef NS_ENUM(NSInteger, JMConfigTabBarAnimType) {
+typedef NS_ENUM(NSInteger, JMConfigTabBarAnimType)
+{
     JMConfigTabBarAnimTypeNormal, //无动画
     JMConfigTabBarAnimTypeRotationY, //Y轴旋转
     JMConfigTabBarAnimTypeBoundsMin, //缩小
@@ -52,7 +55,8 @@ typedef NS_ENUM(NSInteger, JMConfigTabBarAnimType) {
 };
 
 /** badgeValue 动画枚举 */
-typedef NS_ENUM(NSInteger, JMConfigBadgeAnimType) {
+typedef NS_ENUM(NSInteger, JMConfigBadgeAnimType)
+{
     JMConfigBadgeAnimTypeNormal, //无动画
     JMConfigBadgeAnimTypeShake, //抖动动画
     JMConfigBadgeAnimTypeOpacity, //透明过渡动画
@@ -61,8 +65,7 @@ typedef NS_ENUM(NSInteger, JMConfigBadgeAnimType) {
 
 typedef void (^JMConfigCustomBtnBlock) (UIButton *btn, NSInteger index);
 
-@interface JMConfig : NSObject
-
+@interface EHMainTabBarConfig : NSObject
 
 /**
  单例模式
@@ -100,14 +103,8 @@ typedef void (^JMConfigCustomBtnBlock) (UIButton *btn, NSInteger index);
 @property (nonatomic, strong) UIColor *tabBarTopLineColor;
 /** tabBar的背景颜色 (默认白色) */
 @property (nonatomic, strong) UIColor *tabBarBackground;
-
-
-
 /** tabBarController */
 @property (nonatomic, strong) JMTabBarController *tabBarController;
-
-
-
 
 /******************************** badgeValue 基本配置 ********************************/
 
@@ -155,8 +152,6 @@ typedef void (^JMConfigCustomBtnBlock) (UIButton *btn, NSInteger index);
  @param index 下标
  */
 - (void)hideBadgeAtIndex:(NSInteger)index;
-
-
 
 /******************************** 自定义按钮 基本配置 ********************************/
 

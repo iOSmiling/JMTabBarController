@@ -22,7 +22,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 #import "JMBadgeValue.h"
 
 @interface JMTabBarButton : UIView

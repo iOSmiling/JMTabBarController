@@ -11,10 +11,10 @@
 
 #define angle2Rad(angle) ((angle) / 180.0 * M_PI)
 
-
 @implementation CAAnimation (JMAnimation)
 
-+ (CAKeyframeAnimation *)JM_ShakeAnimation_RepeatTimes:(float)repeatTimes {
++ (CAKeyframeAnimation *)JM_ShakeAnimation_RepeatTimes:(float)repeatTimes
+{
     CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
     anima.values = @[@(angle2Rad(-15)),@(angle2Rad(-10)),@(angle2Rad(-7)),@(angle2Rad(-5)),@(angle2Rad(0)),@(angle2Rad(5)),@(angle2Rad(-7)),@(angle2Rad(10)),@(angle2Rad(15))];
     anima.repeatCount = repeatTimes;

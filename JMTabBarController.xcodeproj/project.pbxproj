@@ -23,7 +23,7 @@
 		CBC1FB071FFBDD4200C61D98 /* JMBadgeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC1FB061FFBDD4200C61D98 /* JMBadgeValue.m */; };
 		CBE937EE1FF4D4A700057D6E /* JMTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE937ED1FF4D4A700057D6E /* JMTabBarButton.m */; };
 		CBE937F11FF4E94500057D6E /* UIView+JM.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE937EF1FF4E94400057D6E /* UIView+JM.m */; };
-		CBF1CE561FFB3E5600F295AF /* JMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF1CE551FFB3E5600F295AF /* JMConfig.m */; };
+		CBF1CE561FFB3E5600F295AF /* EHMainTabBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF1CE551FFB3E5600F295AF /* EHMainTabBarConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A41188D920B536E00095BD0A /* EHMainTabBarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMainTabBarConfig.h; sourceTree = "<group>"; };
 		CB4BB6CD1FFE0E3C009CA46C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CB4BB6CE1FFE0E3C009CA46C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CB5DD0851FF249BD0042B971 /* JMTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,8 +77,7 @@
 		CBE937ED1FF4D4A700057D6E /* JMTabBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTabBarButton.m; sourceTree = "<group>"; };
 		CBE937EF1FF4E94400057D6E /* UIView+JM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JM.m"; sourceTree = "<group>"; };
 		CBE937F01FF4E94500057D6E /* UIView+JM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JM.h"; sourceTree = "<group>"; };
-		CBF1CE541FFB3E5600F295AF /* JMConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMConfig.h; sourceTree = "<group>"; };
-		CBF1CE551FFB3E5600F295AF /* JMConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMConfig.m; sourceTree = "<group>"; };
+		CBF1CE551FFB3E5600F295AF /* EHMainTabBarConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHMainTabBarConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +174,8 @@
 				CBE937ED1FF4D4A700057D6E /* JMTabBarButton.m */,
 				CBC1FB051FFBDD4200C61D98 /* JMBadgeValue.h */,
 				CBC1FB061FFBDD4200C61D98 /* JMBadgeValue.m */,
-				CBF1CE541FFB3E5600F295AF /* JMConfig.h */,
-				CBF1CE551FFB3E5600F295AF /* JMConfig.m */,
+				A41188D920B536E00095BD0A /* EHMainTabBarConfig.h */,
+				CBF1CE551FFB3E5600F295AF /* EHMainTabBarConfig.m */,
 			);
 			path = JMTabBarController;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 		CB5DD07D1FF249BD0042B971 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = JM;
 				TargetAttributes = {
 					CB5DD0841FF249BD0042B971 = {
@@ -336,7 +336,7 @@
 				CB5DD08A1FF249BD0042B971 /* AppDelegate.m in Sources */,
 				CBE937EE1FF4D4A700057D6E /* JMTabBarButton.m in Sources */,
 				CB82B0CF1FFCDD4F00D2625F /* CAAnimation+JMAnimation.m in Sources */,
-				CBF1CE561FFB3E5600F295AF /* JMConfig.m in Sources */,
+				CBF1CE561FFB3E5600F295AF /* EHMainTabBarConfig.m in Sources */,
 				CB9CD6A51FF399D700702175 /* JMTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +406,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -413,6 +414,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -461,6 +463,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -468,6 +471,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

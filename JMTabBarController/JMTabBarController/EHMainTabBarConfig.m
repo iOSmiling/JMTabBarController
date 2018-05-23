@@ -22,38 +22,45 @@
  */
 
 
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 #import "JMTabBarController.h"
 #import "JMTabBarButton.h"
 #import "UIView+JM.h"
 
-@implementation JMConfig
-
+@implementation EHMainTabBarConfig
 
 static id _instance = nil;
 
-+ (instancetype)config {
++ (instancetype)config
+{
     return [[self alloc] init];
 }
 
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+		
         _instance = [super allocWithZone:zone];
+		
     });
     return _instance;
 }
 
-- (instancetype)init {
+- (instancetype)init
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+		
         _instance = [super init];
         [self configNormal];
+		
     });
     return _instance;
 }
 
-- (void)configNormal {
+- (void)configNormal
+{
     _norTitleColor = [UIColor colorWithHexString:@"#808080"];
     _selTitleColor = [UIColor colorWithHexString:@"#d81e06"];
     _isClearTabBarTopLine = YES;
@@ -68,32 +75,39 @@ static id _instance = nil;
     _imageOffset = 2.f;
 }
 
-- (void)setBadgeSize:(CGSize)badgeSize {
+- (void)setBadgeSize:(CGSize)badgeSize
+{
     _badgeSize = badgeSize;
     NSMutableArray *arrM = [self getTabBarButtons];
-    for (JMTabBarButton *btn in arrM) {
+    for (JMTabBarButton *btn in arrM)
+	{
         btn.badgeValue.badgeL.size = badgeSize;
     }
 }
 
-- (void)setBadgeOffset:(CGPoint)badgeOffset {
+- (void)setBadgeOffset:(CGPoint)badgeOffset
+{
     _badgeOffset = badgeOffset;
     NSMutableArray *arrM = [self getTabBarButtons];
-    for (JMTabBarButton *btn in arrM) {
+    for (JMTabBarButton *btn in arrM)
+	{
         btn.badgeValue.badgeL.x += badgeOffset.x;
         btn.badgeValue.badgeL.y += badgeOffset.y;
     }
 }
 
-- (void)setBadgeTextColor:(UIColor *)badgeTextColor {
+- (void)setBadgeTextColor:(UIColor *)badgeTextColor
+{
     _badgeTextColor = badgeTextColor;
     NSMutableArray *arrM = [self getTabBarButtons];
-    for (JMTabBarButton *btn in arrM) {
+    for (JMTabBarButton *btn in arrM)
+	{
         btn.badgeValue.badgeL.textColor = badgeTextColor;
     }
 }
 
-- (void)setBadgeBackgroundColor:(UIColor *)badgeBackgroundColor {
+- (void)setBadgeBackgroundColor:(UIColor *)badgeBackgroundColor
+{
     _badgeBackgroundColor = badgeBackgroundColor;
     NSMutableArray *arrM = [self getTabBarButtons];
     for (JMTabBarButton *btn in arrM) {
@@ -128,7 +142,8 @@ static id _instance = nil;
     tabBarButton.badgeValue.type = JMBadgeValueTypeNew;
 }
 
-- (void)showNumberBadgeValue:(NSString *)badgeValue AtIndex:(NSInteger)index {
+- (void)showNumberBadgeValue:(NSString *)badgeValue AtIndex:(NSInteger)index
+{
     JMTabBarButton *tabBarButton = [self getTabBarButtonAtIndex:index];
     tabBarButton.badgeValue.hidden = NO;
     tabBarButton.badgeValue.badgeL.text = badgeValue;
@@ -164,12 +179,15 @@ static id _instance = nil;
     return nil;
 }
 
-- (NSMutableArray *)getTabBarButtons {
+- (NSMutableArray *)getTabBarButtons
+{
     NSArray *subViews = self.tabBarController.JM_TabBar.subviews;
     NSMutableArray *tempArr = [NSMutableArray array];
-    for (int i = 0; i < subViews.count; i++) {
+    for (int i = 0; i < subViews.count; i++)
+	{
         UIView *tabBarButton = subViews[i];
-        if ([tabBarButton isKindOfClass:[JMTabBarButton class]]) {
+        if ([tabBarButton isKindOfClass:[JMTabBarButton class]])
+		{
             JMTabBarButton *tabBarBtn = (JMTabBarButton *)tabBarButton;
             [tempArr addObject:tabBarBtn];
         }

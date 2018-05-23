@@ -30,12 +30,12 @@
 
 @implementation JMNavTestController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
     
     self.title = @"超强自定义导航栏";
-    
     
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     
@@ -51,6 +51,7 @@
     btn.backgroundColor = [UIColor redColor];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+	
 }
 
 @end

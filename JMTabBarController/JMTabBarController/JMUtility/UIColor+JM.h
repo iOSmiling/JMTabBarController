@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (JM)
+@interface UIColor (Utils)
 
 //16进制颜色转换
 + (UIColor *)colorWithHexString:(NSString *)color;

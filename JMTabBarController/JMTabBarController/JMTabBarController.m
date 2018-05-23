@@ -16,7 +16,8 @@
 
 @implementation JMTabBarController
 
-- (instancetype)initWithTabBarControllers:(NSArray *)controllers NorImageArr:(NSArray *)norImageArr SelImageArr:(NSArray *)selImageArr TitleArr:(NSArray *)titleArr Config:(JMConfig *)config{
+- (instancetype)initWithTabBarControllers:(NSArray *)controllers NorImageArr:(NSArray *)norImageArr SelImageArr:(NSArray *)selImageArr TitleArr:(NSArray *)titleArr Config:(EHMainTabBarConfig *)config
+{
     self.viewControllers = controllers;
     self.JM_TabBar = [[JMTabBar alloc] initWithFrame:self.tabBar.frame norImageArr:norImageArr SelImageArr:selImageArr TitleArr:titleArr Config:config];
     self.JM_TabBar.myDelegate = self;
@@ -25,7 +26,7 @@
     [self setValue:self.JM_TabBar forKeyPath:@"tabBar"];
 
     
-    [JMConfig config].tabBarController = self;
+    [EHMainTabBarConfig config].tabBarController = self;
     
     //KVO
     [self addObserver:self forKeyPath:@"selectedIndex" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
@@ -42,14 +43,15 @@
     self.selectedIndex = selectIndex;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     JMLog(@"被销毁了");
     [self removeObserver:self forKeyPath:@"selectedIndex"];
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
 }
 
 

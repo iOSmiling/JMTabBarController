@@ -38,7 +38,9 @@
 + (CABasicAnimation *)JM_ScaleAnimation;
 
 + (CABasicAnimation *)JM_TabBarRotationY;
+
 + (CABasicAnimation *)JM_TabBarBoundsMin;
+
 + (CABasicAnimation *)JM_TabBarBoundsMax;
 
 

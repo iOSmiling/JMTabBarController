@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "JMTabBarController.h"
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -46,7 +46,7 @@
     }
     
     //初始化配置信息
-    JMConfig *config = [JMConfig config];
+    EHMainTabBarConfig *config = [EHMainTabBarConfig config];
     
     JMTabBarController *tabBarVc = [[JMTabBarController alloc] initWithTabBarControllers:controllersArr NorImageArr:imageNormalArr SelImageArr:imageSelectedArr TitleArr:titleArr Config:config];
     
@@ -58,7 +58,7 @@
         JMLog(@"点击了我");
         UIViewController *vc = [[UIViewController alloc] init];
         vc.view.backgroundColor = [UIColor orangeColor];
-        [[JMConfig config].tabBarController presentViewController:vc animated:YES completion:nil];
+        [[EHMainTabBarConfig config].tabBarController presentViewController:vc animated:YES completion:nil];
 
         //测试代码 (两秒后自动关闭)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

@@ -23,7 +23,7 @@
 
 #import "JMBadgeValue.h"
 #import "UIColor+JM.h"
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 #import "UIView+JM.h"
 #import "CAAnimation+JMAnimation.h"
 
@@ -37,12 +37,12 @@
     if (self = [super initWithFrame:frame]) {
         
         self.badgeL = [[UILabel alloc] initWithFrame:self.bounds];
-        self.badgeL.textColor = [[JMConfig config] badgeTextColor];
+        self.badgeL.textColor = [[EHMainTabBarConfig config] badgeTextColor];
         self.badgeL.font = [UIFont systemFontOfSize:11.f];
         self.badgeL.textAlignment = NSTextAlignmentCenter;
         self.badgeL.layer.cornerRadius = 8.f;
         self.badgeL.layer.masksToBounds = YES;
-        self.badgeL.backgroundColor = [[JMConfig config] badgeBackgroundColor];
+        self.badgeL.backgroundColor = [[EHMainTabBarConfig config] badgeBackgroundColor];
         [self addSubview:self.badgeL];
     }
     return self;
@@ -71,7 +71,7 @@
         self.badgeL.layer.cornerRadius = radius;
     }
 
-    JMConfigBadgeAnimType animType = [[JMConfig config] animType];
+    JMConfigBadgeAnimType animType = [[EHMainTabBarConfig config] animType];
     if (animType == JMConfigBadgeAnimTypeShake) {   //抖动
         [self.badgeL.layer addAnimation:[CAAnimation JM_ShakeAnimation_RepeatTimes:5] forKey:@"shakeAnimation"];
     } else if (animType == JMConfigBadgeAnimTypeOpacity) { //透明过渡动画

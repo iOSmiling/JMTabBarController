@@ -9,6 +9,7 @@
 #import "UIView+JM.h"
 
 @implementation UIView (JM)
+
 - (void)setX:(CGFloat)x
 {
     CGRect frame = self.frame;

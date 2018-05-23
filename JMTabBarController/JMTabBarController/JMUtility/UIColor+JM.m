@@ -8,10 +8,11 @@
 
 #import "UIColor+JM.h"
 
-@implementation UIColor (JM)
+@implementation UIColor (Utils)
 
 
-+ (UIColor *)colorWithHexString:(NSString *)color {
++ (UIColor *)colorWithHexString:(NSString *)color
+{
     return [self colorWithHexString:color Alpha:1.0f];
 }
 

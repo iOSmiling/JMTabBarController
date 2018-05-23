@@ -24,7 +24,7 @@
 #import "ViewController.h"
 #import "UIView+JM.h"
 #import "JMTabBarController.h"
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -120,7 +120,7 @@
     self.vc.timer = nil;
     
     //恢复默认配置
-    [[JMConfig config] configNormal];
+    [[EHMainTabBarConfig config] configNormal];
 }
 
 
@@ -143,7 +143,8 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
     if (section == 0) {
         return @"tabBar自定义样式";
     } else if (section == 1) {
@@ -153,49 +154,81 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     //初始化配置信息
-    JMConfig *config = [JMConfig config];
+    EHMainTabBarConfig *config = [EHMainTabBarConfig config];
     //因为config是单例,在demo工程中需要重新设置图片大小, 在实际应用中不用设置该属性(因为尺寸会有默认值)
     
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) { //默认样式(不做任何配置)
-        } else if (indexPath.row == 1) {
+    if (indexPath.section == 0)
+	{
+        if (indexPath.row == 0)//默认样式(不做任何配置)
+		{
+			
+        } else if (indexPath.row == 1)
+		{
             config.typeLayout = JMConfigTypeLayoutImage;
-        } else if (indexPath.row == 2) {
+			
+        } else if (indexPath.row == 2)
+		{
             config.typeLayout = JMConfigTypeLayoutImage;
             config.imageSize = CGSizeMake(38, 38);
-        } else if (indexPath.row == 3) {
+			
+        } else if (indexPath.row == 3)
+		{
             config.tabBarAnimType = JMConfigTabBarAnimTypeRotationY;
-        } else if (indexPath.row == 4) {
+			
+        } else if (indexPath.row == 4)
+		{
             config.tabBarAnimType = JMConfigTabBarAnimTypeScale;
-        } else if (indexPath.row == 5) {
+			
+        } else if (indexPath.row == 5)
+		{
             config.tabBarAnimType = JMConfigTabBarAnimTypeBoundsMax;
-        } else if (indexPath.row == 6) {
+			
+        } else if (indexPath.row == 6)
+		{
             config.tabBarAnimType = JMConfigTabBarAnimTypeBoundsMin;
-        } else if (indexPath.row == 7) {
+			
+        } else if (indexPath.row == 7)
+		{
             config.norTitleColor = [UIColor blueColor];
             config.selTitleColor = [UIColor redColor];
-        } else if (indexPath.row == 8) {
+			
+        } else if (indexPath.row == 8)
+		{
             config.tabBarBackground = [UIColor greenColor];
         }
-    } else if (indexPath.section == 1) {
+		
+    } else if (indexPath.section == 1)
+	{
         //关于badgeValue的样式可全局配置 ,所以这里就return了
-        if (indexPath.row == 0) {
+        if (indexPath.row == 0)
+		{
 //            [config showNewBadgeAtIndex:0];
             [config showNewBadgeAtIndex:1];
-        } else if (indexPath.row == 1) {
+			
+        } else if (indexPath.row == 1)
+		{
             [config showPointBadgeAtIndex:2];
-        } else if (indexPath.row == 2) {
+			
+        } else if (indexPath.row == 2)
+		{
             [config showNumberBadgeValue:@"6" AtIndex:3];
             [config showNumberBadgeValue:@"99" AtIndex:4];
-        } else if (indexPath.row == 3) {
+			
+        } else if (indexPath.row == 3)
+		{
             config.animType = JMConfigBadgeAnimTypeShake;
             [config showNumberBadgeValue:@"99" AtIndex:4];
-        } else if (indexPath.row == 4) {
+			
+        } else if (indexPath.row == 4)
+		{
             config.animType = JMConfigBadgeAnimTypeOpacity;
             [config showNumberBadgeValue:@"99" AtIndex:4];
-        } else if (indexPath.row == 5) {
+			
+        } else if (indexPath.row == 5)
+		{
             config.animType = JMConfigBadgeAnimTypeScale;
             [config showNumberBadgeValue:@"99" AtIndex:4];
         }

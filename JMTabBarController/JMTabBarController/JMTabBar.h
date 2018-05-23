@@ -22,7 +22,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "JMConfig.h"
+#import "EHMainTabBarConfig.h"
 
 @class JMTabBar;
 @protocol JMTabBarDelegate <NSObject>
@@ -33,7 +33,7 @@
 
 @interface JMTabBar : UITabBar
 
-- (instancetype)initWithFrame:(CGRect)frame norImageArr:(NSArray *)norImageArr SelImageArr:(NSArray *)selImageArr TitleArr:(NSArray *)titleArr Config:(JMConfig *)config;
+- (instancetype)initWithFrame:(CGRect)frame norImageArr:(NSArray *)norImageArr SelImageArr:(NSArray *)selImageArr TitleArr:(NSArray *)titleArr Config:(EHMainTabBarConfig *)config;
 
 /** 代理 */
 @property (nonatomic, weak) id <JMTabBarDelegate>myDelegate;
